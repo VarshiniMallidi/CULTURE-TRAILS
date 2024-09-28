@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Hunt Feedback Form</title>
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 600px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      color: #333;
+    }
+
+    #thankYouMessage h3 {
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <h2></h2>
+
+  <form id="feedbackForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="experience">How was your overall experience?</label>
+    <textarea id="experience" name="experience" rows="4" placeholder="Share your experience" required></textarea>
+
+    <label for="difficulty">How difficult were the clues?</label>
+    <select id="difficulty" name="difficulty" required>
+      <option value="" disabled selected>Select difficulty level</option>
+      <option value="Easy">Easy</option>
+      <option value="Moderate">Moderate</option>
+      <option value="Hard">Hard</option>
+      <option value="Impossible">Impossible</option>
+    </select>
+
+    <label for="favoritePart">What was your favorite part of the treasure hunt?</label>
+    <textarea id="favoritePart" name="favoritePart" rows="2" placeholder="Share your favorite part" required></textarea>
+
+    <label for="improvements">What could we improve for future treasure hunts?</label>
+    <textarea id="improvements" name="improvements" rows="3" placeholder="Your suggestions for improvement"></textarea>
+
+    <div style="text-align: center;">
+      <button type="submit">Submit Feedback</button>
+    </div>
+  </form>
+
+  <div id="thankYouMessage">
+    <h3>Thank you for your time!</h3>
+    <p>We appreciate your feedback.</p>
+  </div>
+
+  <script>
+   
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      document.getElementById('feedbackForm').style.display = 'none';
+
+      document.getElementById('thankYouMessage').style.display = 'block';
+
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of Charminar: The Treasure Hunt</title>
+  <link rel="stylesheet" href="/hunt/charminar/style.css">
+</head>
+<body>
+  <div class="map-background">
+    <h1 class="title"></h1>
+    <h1 class="title"></h1>
+
+
+    <div class="clue-container">
+      <!-- Clue 1 -->
+      <div id="clue1" class="clue-box">
+        <h2>Clue 1</h2>
+        <p class="clue-text">"The Forgotten Fountain"</p>
+        <p class="clue-text">"A fountain that once gave life and breath, Now stands silent, in stone it rests. Find the spot where water once flowed, And tell me the shape of this ancient abode."</p>
+        <input type="text" id="answer1" placeholder="Enter your answer">
+        <button id="submit1">Submit</button>
+        <div class="hint-buttons">
+          <button id="freeHint1">Free Hint</button>
+          <button id="paidHint1">Paid Hint</button>
+        </div>
+        <p id="feedback1" class="feedback"></p>
+        <p id="hint1" class="hint-text hidden"></p>
+      </div>
+
+      <!-- Clue 2 -->
+      <div id="clue2" class="clue-box hidden">
+        <h2>Clue 2</h2>
+        <p class="clue-text">"A Glimpse of Royalty"</p>
+        <p class="clue-text">"Where artisans work with steady hands,
+          Weaving tales from far-off lands.
+          Find the corner where carpets are laid,
+          And tell me where these treasures are made."<p>
+        <input type="text" id="answer2" placeholder="Enter your answer">
+        <button id="submit2">Submit</button>
+        <div class="hint-buttons">
+          <button id="freeHint2">Free Hint</button>
+          <button id="paidHint2">Paid Hint</button>
+        </div>
+        <p id="feedback2" class="feedback"></p>
+        <p id="hint2" class="hint-text hidden"></p>
+      </div>
+
+      <!-- Clue 3 -->
+      <div id="clue3" class="clue-box hidden">
+        <h2>Clue 3</h2>
+        <p class="clue-text">"The Market Surrounds"</p>
+        <p class="clue-text">"In the bustling bazaar just near your feet, The pearls of Hyderabad, a famous treat. But look closely where the gems are found, A shop with no sign, just colors around."</p>
+        <input type="text" id="answer3" placeholder="Enter your answer">
+        <button id="submit3">Submit</button>
+        <div class="hint-buttons">
+          <button id="freeHint3">Free Hint</button>
+          <button id="paidHint3">Paid Hint</button>
+        </div>
+        <p id="feedback3" class="feedback"></p>
+        <p id="hint3" class="hint-text hidden"></p>
+      </div>
+
+
+      <div id="imageUploadPopup" class="hidden">
+        <h2>Upload a Picture</h2>
+        <input type="file" id="imageUpload">
+        <button id="uploadImage">Upload</button>
+        <p id="uploadFeedback" class="feedback"></p>
+      </div>
+
+      <div id="suggestionPopup" class="hidden">
+        <p>Check this out!</p>
+        <ul id="suggestionList"></ul>
+        <button id="nextClue">Move to Next Clue</button>
+      </div>
+    </div>
+  </div>
+  <script src="/hunt/charminar/script.js"></script>
+</body>
+</html>

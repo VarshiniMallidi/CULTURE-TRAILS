@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - Treasure Hunt</title>
+  <link rel="stylesheet" href="/hunt/registration/style.css">
+  <style>
+    #qr-code {
+      width: 150px;
+      height: 150px;
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-container">
+    <h1>Treasure Hunt Registration</h1>
+    
+    <form id="registrationForm">
+     
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="contact">Contact Info:</label>
+      <input type="text" id="contact" name="contact" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="experience">Experience Level in Treasure Hunts:</label>
+      <select id="experience" name="experience" required>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+
+      <label for="location">Pick a Place:</label>
+      <select id="location" name="location" required>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="kolkata">Kolkata</option>
+        <option value="mysore">Mysore</option>
+        <option value="kashmir">Kashmir</option>
+        <option value="munnar">Munnar</option>
+        <option value="goa">Goa</option>
+      </select>
+
+      <h3>Payment:</h3>
+      <p>Please scan the QR code below to make the payment:</p>
+     
+      <a href="/images/payment.jpeg" target="_blank">
+        <img src="/images/payment.jpeg" alt="QR Code for Payment" id="qr-code">
+      </a>
+      
+      <p>After making the payment, upload the payment screenshot below.</p>
+
+      <label for="paymentScreenshot">Upload Payment Screenshot:</label>
+      <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+   
+      <button type="submit">Submit Registration & Payment</button>
+    
+      <p id="registrationStatus" class="hidden"></p>
+    </form>
+
+   
+    <div id="otpSection" class="hidden">
+      <h3>Enter OTP to Start the Game</h3>
+      <form id="otpForm">
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+        <button type="submit">Verify OTP</button>
+      </form>
+      <p id="otpFeedback"></p>
+    </div>
+  </div>
+
+  <script>
+   
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const screenshot = document.getElementById('paymentScreenshot').files[0];
+
+      if (!screenshot) {
+        document.getElementById('registrationStatus').textContent = "Please upload a valid payment screenshot.";
+        return;
+      }
+
+      document.getElementById('registrationStatus').textContent = "Payment screenshot uploaded successfully. We will verify and send an OTP soon.";
+
+      setTimeout(() => {
+        const generatedOTP = Math.floor(100000 + Math.random() * 900000); 
+        alert("Your OTP is: " + generatedOTP);
+        
+        sessionStorage.setItem('userOTP', generatedOTP);
+        
+        document.getElementById('otpSection').classList.remove('hidden');
+      }, 2000); 
+    });
+
+    document.getElementById('otpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const userOTP = document.getElementById('otp').value;
+      const storedOTP = sessionStorage.getItem('userOTP');
+
+      if (userOTP === storedOTP) {
+        document.getElementById('otpFeedback').textContent = "OTP verified! You can now start the treasure hunt.";
+        window.location.href = "/hunt/instructions/instructions.html";
+      } else {
+        document.getElementById('otpFeedback').textContent = "Invalid OTP. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>

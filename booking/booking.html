@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Facilities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #605d5d18;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #070807;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 36px;
+      font-family: 'Courier New', Courier, monospace;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .main-content {
+      margin-top: 80px; 
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button {
+      background-color: #3d3e3d;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Booking Facilities
+  </header>
+
+  <div class="main-content">
+    <div class="button-container">
+      <button class="button">Hotels</button>
+      <button class="button">Trains</button>
+      <button class="button">Flights</button>
+      <button class="button">Buses</button>
+      <button class="button">Cars/Vans</button>
+      <button class="button">Ships/Boats</button>
+    </div>
+  </div>
+</body>
+</html>
